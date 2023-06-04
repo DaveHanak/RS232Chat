@@ -6,8 +6,29 @@
         xmlns:local="clr-namespace:RS232Chat"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <ComboBox x:Name="cmbTest" HorizontalAlignment="Left" Margin="66,65,0,0" VerticalAlignment="Top" Width="120"/>
-
-    </Grid>
+    <DockPanel LastChildFill="True">
+        <StackPanel Margin="10" DockPanel.Dock="Left">
+            <TextBlock TextWrapping="Wrap" Text="Port"/>
+            <ComboBox Name="cmbPort" Width="120"/>
+            <TextBlock TextWrapping="Wrap" Text="Baud rate"/>
+            <ComboBox Name="cmbBaudRate" Width="120"/>
+            <TextBlock TextWrapping="Wrap" Text="Data bits"/>
+            <ComboBox Name="cmbDataBits" Width="120"/>
+            <TextBlock TextWrapping="Wrap" Text="Parity"/>
+            <ComboBox Name="cmbParity" Width="120"/>
+            <TextBlock TextWrapping="Wrap" Text="Stop bits"/>
+            <ComboBox Name="cmbStopBits" Width="120"/>
+            <TextBlock TextWrapping="Wrap" Text="Message terminator"/>
+            <ComboBox Name="cmbTerminator" Width="120"/>
+            <TextBlock TextWrapping="Wrap" Text="Flow control"/>
+            <ComboBox Name="cmbFlow" Width="120"/>
+            <Grid Height="50"/>
+            <TextBlock Name="change" TextWrapping="Wrap" Text="*Changes pending."/>
+            <Button Name="applySettings" Content="Apply settings" Click="OnApplySettingsClicked"/>
+        </StackPanel>
+        <StackPanel Margin="10">
+            <TextBox Name="chatHistoryWindow" TextWrapping="Wrap" Height="360"/>
+            <TextBox Name="chatMessageWindow" TextWrapping="Wrap" KeyDown="OnKeyDownHandler"/>
+        </StackPanel>
+    </DockPanel>
 </Window>

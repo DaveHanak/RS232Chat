@@ -22,7 +22,7 @@ namespace RS232Chat
         CR_LF,
         UserDefined,
     }
-    internal class RS232PortSettings
+    public class RS232PortSettings
     {  
         public string PortName { get; set; }
         public int BaudRate { get; set; }
@@ -39,8 +39,8 @@ namespace RS232Chat
             DataBits = RS232Constants.DefaultDataBits;
             Parity = RS232Constants.DefaultParity;
             StopBits = RS232Constants.DefaultStopBits;
-            FlowControl = FlowControl.None;
-            MessageTerminator = MessageTerminator.CR;
+            FlowControl = RS232Constants.DefaultFlowControl;
+            MessageTerminator = RS232Constants.DefaultMessageTerminator;
         }
     }
 }

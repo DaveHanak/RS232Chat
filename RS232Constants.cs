@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO.Ports;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO.Ports;
+using System.Security.Policy;
 
 namespace RS232Chat
 {
-    internal class RS232Constants
+    public class RS232Constants
     {
-        public static int DefaultBaudRate = 9600;
-        public static int[] CommonBaudRates =
+        public const int DefaultBaudRate = 9600;
+        public static readonly int[] CommonBaudRates =
         {
             150,
             200,
@@ -29,31 +25,31 @@ namespace RS232Chat
             115200,
         };
 
-        public static int DefaultDataBits = 7;
-        public static int[] CommonDataBits =
+        public const int DefaultDataBits = 7;
+        public static readonly int[] CommonDataBits =
         {
             7,
             8,
         };
 
-        public static Parity DefaultParity = Parity.Even;
-        public static Parity[] CommonParities =
+        public const Parity DefaultParity = Parity.Even;
+        public static readonly Parity[] CommonParities =
         {
             Parity.None,
             Parity.Odd,
             Parity.Even,
         };
 
-        public static StopBits DefaultStopBits = StopBits.One;
-        public static StopBits[] CommonStopBits =
+        public const StopBits DefaultStopBits = StopBits.One;
+        public static readonly StopBits[] CommonStopBits =
         {
             StopBits.One,
             StopBits.Two,
         };
 
-        public static FlowControl DefaultFlowControl = FlowControl.None;
-        public static string DefaultFlowControlName = "None";
-        public static string[] CommonFlowControlNames =
+        public const FlowControl DefaultFlowControl = FlowControl.None;
+        public const string DefaultFlowControlName = "None";
+        public static readonly string[] CommonFlowControlNames =
         {
             "None",
             "RTS/CTS",
@@ -61,9 +57,9 @@ namespace RS232Chat
             "XON/XOFF",
         };
 
-        public static MessageTerminator DefaultMessageTerminator = MessageTerminator.CR;
-        public static string DefaultMessageTerminatorName = "CR";
-        public static string[] CommonMessageTerminatorNames =
+        public const MessageTerminator DefaultMessageTerminator = MessageTerminator.CR;
+        public const string DefaultMessageTerminatorName = "CR";
+        public static readonly string[] CommonMessageTerminatorNames =
         {
             "None",
             "CR",
@@ -71,5 +67,14 @@ namespace RS232Chat
             "CR LF",
             "User defined",
         };
+
+        public const double DefaultTimerInterval = 1000.0;
+
+        public const string CommandSign = "/";
+        public const string HelpCommand = "/help";
+        public const string PingCommand = "/ping";
+        public const string PongCommand = "/pong";
+        public const string SetTerminatorCommand = "/t";
+        public const string ClearCommand = "/clear";
     }
 }
